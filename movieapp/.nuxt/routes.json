@@ -2,13 +2,15 @@
   {
     "name": "movies-movieid",
     "path": "/movies/:movieid?",
-    "component": "D:\\\\Nuxt-movieapp\\\\movieapp\\\\pages\\\\movies\\\\_movieid.vue",
-    "chunkName": "pages/movies/_movieid"
+    "component": "D:\\\\SEP6Frontend\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\movies\\\\_movieid.vue",
+    "chunkName": "pages/movies/_movieid",
+    "_name": "_6da03d39"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "D:\\\\Nuxt-movieapp\\\\movieapp\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "component": "D:\\\\SEP6Frontend\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_563d1cd0"
   }
 ]

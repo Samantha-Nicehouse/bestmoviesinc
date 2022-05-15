@@ -158,14 +158,7 @@ export default {
           res.data.results.forEach((movie) => {
             this.movies.push(movie)
           })
-          // res.data.forEach((movie) => {
-          //   this.movies.push(movie)
-          // })
         })
-      // const result = await data
-      // result.data.forEach((movie) => {
-      //   this.movies.push(movie)
-      // })
     },
     async searchMovies() {
       const data = axios.get(

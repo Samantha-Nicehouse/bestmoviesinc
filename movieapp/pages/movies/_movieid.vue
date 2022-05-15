@@ -39,7 +39,29 @@
             })
           }}
         </p>
+        <p class="movie-fact">
+          <span>Rating:</span> {{ movie.vote_average }} (number of votes:
+          {{ movie.vote_count }})
+        </p>
         <p class="movie-fact"><span>Overview:</span> {{ movie.overview }}</p>
+        <p class="movie-fact">
+          <span>Directors:</span>
+          <span
+            v-for="(director, index) in directors"
+            :key="index"
+            class="cast"
+          >
+            {{ director.name
+            }}<span v-if="index < directors.length - 1">,</span></span
+          >.
+        </p>
+        <p class="movie-fact">
+          <span>Actors:</span>
+          <span v-for="(actor, index) in actors" :key="index" class="cast">
+            {{ actor.name
+            }}<span v-if="index < actors.length - 1">,</span></span
+          >.
+        </p>
       </div>
     </div>
   </div>
@@ -53,11 +75,15 @@ export default {
   data() {
     return {
       movie: '',
+      movieCredits: '',
+      directors: [],
+      actors: [],
     }
   },
 
   async fetch() {
     await this.getSingleMovie()
+    await this.getSingleMovieCredits()
   },
   fetchDelay: 1000,
 
@@ -74,7 +100,25 @@ export default {
       )
       const result = await data
       this.movie = result.data
-      console.log(this.movie)
+    },
+    async getSingleMovieCredits() {
+      const data = axios.get(
+        `https://api.themoviedb.org/3/movie/${this.$route.params.movieid}/credits?api_key=a3350cca7f4b916251b737d31cd4135b&language=en-US`
+      )
+      const result = await data
+      this.movieCredits = result.data
+      this.movieCredits.crew.forEach((crew) => {
+        if (crew.department === 'Directing') {
+          this.directors.push(crew)
+        }
+      })
+      this.movieCredits.cast.forEach((cast) => {
+        if (cast.known_for_department === 'Acting') {
+          if (this.actors.length <= 9) {
+            this.actors.push(cast)
+          }
+        }
+      })
     },
   },
 }
@@ -92,6 +136,10 @@ export default {
   .button {
     align-self: flex-start;
     margin-bottom: 32px;
+  }
+  .cast {
+    text-decoration: none !important;
+    font-weight: normal !important;
   }
   .movie-info {
     display: flex;
