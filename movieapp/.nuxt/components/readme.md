@@ -8,3 +8,6 @@ You can directly use them in pages and other components without the need to impo
 
 - `<Hero>` | `<hero>` (components/Hero.vue)
 - `<Loading>` | `<loading>` (components/Loading.vue)
+- `<LoginModal>` | `<login-modal>` (components/LoginModal.vue)
+- `<Navbar>` | `<navbar>` (components/Navbar.vue)
+- `<RegisterModal>` | `<register-modal>` (components/RegisterModal.vue)

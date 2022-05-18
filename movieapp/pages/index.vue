@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <Navbar class="navbar" design="default" />
     <!-- Hero -->
     <Hero />
 
@@ -62,7 +63,7 @@
       </div>
 
       <!-- Now Streaming  -->
-      <div id="movie-grid" v-else class="movies-grid">
+      <div v-else id="movie-grid" class="movies-grid">
         <div v-for="(movie, index) in movies" :key="index" class="movie">
           <div class="movie-img">
             <img
@@ -102,8 +103,15 @@
 
 <script>
 import axios from 'axios'
+import Navbar from '../components/Navbar.vue'
+
 export default {
   name: 'home',
+
+  components: {
+    Navbar,
+  },
+  layout: 'empty',
 
   data() {
     return {
@@ -179,6 +187,7 @@ export default {
 
 <style lang="scss">
 .home {
+  background-color: #211f1f;
   .loading {
     padding-top: 120px;
     align-items: flex-start;

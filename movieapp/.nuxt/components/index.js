@@ -1,5 +1,8 @@
 export { default as Hero } from '../..\\components\\Hero.vue'
 export { default as Loading } from '../..\\components\\Loading.vue'
+export { default as LoginModal } from '../..\\components\\LoginModal.vue'
+export { default as Navbar } from '../..\\components\\Navbar.vue'
+export { default as RegisterModal } from '../..\\components\\RegisterModal.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

@@ -4,5 +4,14 @@
   },
   "Loading": {
     "description": "Auto imported from components/Loading.vue"
+  },
+  "LoginModal": {
+    "description": "Auto imported from components/LoginModal.vue"
+  },
+  "Navbar": {
+    "description": "Auto imported from components/Navbar.vue"
+  },
+  "RegisterModal": {
+    "description": "Auto imported from components/RegisterModal.vue"
   }
 }

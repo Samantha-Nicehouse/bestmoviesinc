@@ -1,5 +1,19 @@
 [
   {
+    "name": "popularmovies",
+    "path": "/popularmovies",
+    "component": "D:\\\\SEP6Frontend\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\popularmovies.vue",
+    "chunkName": "pages/popularmovies",
+    "_name": "_fc2b8dbc"
+  },
+  {
+    "name": "topratedmovies",
+    "path": "/topratedmovies",
+    "component": "D:\\\\SEP6Frontend\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\topratedmovies.vue",
+    "chunkName": "pages/topratedmovies",
+    "_name": "_2e92697c"
+  },
+  {
     "name": "movies-movieid",
     "path": "/movies/:movieid?",
     "component": "D:\\\\SEP6Frontend\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\movies\\\\_movieid.vue",
