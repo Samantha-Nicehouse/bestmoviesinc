@@ -3,7 +3,7 @@
     <img src="../assets/imgs/movieHero.jpg" alt="" />
     <div class="text-container">
       <div class="text">
-        <span class="mini-heading">Now Stremaing</span>
+        <span class="mini-heading">Now Streaming</span>
         <h1><span>Best</span> Movies</h1>
         <a href="#movie-grid" class="button">View Movies</a>
       </div>

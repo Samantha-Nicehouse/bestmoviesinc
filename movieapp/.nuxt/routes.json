@@ -3,28 +3,24 @@
     "name": "popularmovies",
     "path": "/popularmovies",
     "component": "D:\\\\SEP6Frontend\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\popularmovies.vue",
-    "chunkName": "pages/popularmovies",
-    "_name": "_fc2b8dbc"
+    "chunkName": "pages/popularmovies"
   },
   {
     "name": "topratedmovies",
     "path": "/topratedmovies",
     "component": "D:\\\\SEP6Frontend\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\topratedmovies.vue",
-    "chunkName": "pages/topratedmovies",
-    "_name": "_2e92697c"
+    "chunkName": "pages/topratedmovies"
   },
   {
     "name": "movies-movieid",
     "path": "/movies/:movieid?",
     "component": "D:\\\\SEP6Frontend\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\movies\\\\_movieid.vue",
-    "chunkName": "pages/movies/_movieid",
-    "_name": "_6da03d39"
+    "chunkName": "pages/movies/_movieid"
   },
   {
     "name": "index",
     "path": "/",
     "component": "D:\\\\SEP6Frontend\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_563d1cd0"
+    "chunkName": "pages/index"
   }
 ]
