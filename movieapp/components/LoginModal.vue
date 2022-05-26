@@ -14,6 +14,7 @@
               type="email"
               name="email"
               placeholder="Email"
+              v-model = "email"
             />
             <input
               id="password"
@@ -21,6 +22,7 @@
               type="password"
               name="password"
               placeholder="Password"
+              v-model = "password"
             />
             <div class="buttons-container">
               <button id="login" class="button" @click="login">Log In</button>
@@ -43,6 +45,8 @@ export default {
   data() {
     return {
       showModal: false,
+      email : '',
+      password : '',
     }
   },
   methods: {
@@ -59,28 +63,14 @@ export default {
       window.onscroll = function () {}
     },
     async login() {
-      const email = document.getElementById('email').value
-      const pass = document.getElementById('password').value
-      const user = {
-        email: email,
-        password: pass,
+      try{
+        await this.$store.dispatch("signin",{email:this.email,password:this.password})
+        this.close()
       }
-      let res
-      try {
-        res = await this.$axios.post(
-          'https://viaucsep6group1.azurewebsites.net/Auth/Login',
-          user
-        )
-        let today = new Date()
-        const dd = String(today.getDate()).padStart(2, '0')
-        const mm = String(today.getMonth() + 1).padStart(2, '0') // January is 0!
-        const yyyy = today.getFullYear()
-        today = mm + '/' + dd + '/' + yyyy
-        document.cookie = `authToken=${res.data}; expires=${today}`
-      } catch (e) {
-        alert('Something went wrong, please try again !')
+      catch(e){
+        console.log(e)
       }
-      window.location.reload()
+      
     },
   },
 }

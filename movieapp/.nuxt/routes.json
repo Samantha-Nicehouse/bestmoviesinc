@@ -1,26 +1,51 @@
 [
   {
+    "name": "favorites",
+    "path": "/favorites",
+    "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\favorites.vue",
+    "chunkName": "pages/favorites",
+    "_name": "_2904c89d"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\login.vue",
+    "chunkName": "pages/login",
+    "_name": "_0e693baf"
+  },
+  {
     "name": "popularmovies",
     "path": "/popularmovies",
-    "component": "D:\\\\SEP6Frontend\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\popularmovies.vue",
-    "chunkName": "pages/popularmovies"
+    "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\popularmovies.vue",
+    "chunkName": "pages/popularmovies",
+    "_name": "_7eb36022"
+  },
+  {
+    "name": "register",
+    "path": "/register",
+    "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\register.vue",
+    "chunkName": "pages/register",
+    "_name": "_732cea66"
   },
   {
     "name": "topratedmovies",
     "path": "/topratedmovies",
-    "component": "D:\\\\SEP6Frontend\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\topratedmovies.vue",
-    "chunkName": "pages/topratedmovies"
+    "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\topratedmovies.vue",
+    "chunkName": "pages/topratedmovies",
+    "_name": "_6a23bb08"
   },
   {
     "name": "movies-movieid",
     "path": "/movies/:movieid?",
-    "component": "D:\\\\SEP6Frontend\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\movies\\\\_movieid.vue",
-    "chunkName": "pages/movies/_movieid"
+    "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\movies\\\\_movieid.vue",
+    "chunkName": "pages/movies/_movieid",
+    "_name": "_61f1b639"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "D:\\\\SEP6Frontend\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_44c19898"
   }
 ]

@@ -4,10 +4,13 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _fc2b8dbc = () => interopDefault(import('..\\pages\\popularmovies.vue' /* webpackChunkName: "pages/popularmovies" */))
-const _2e92697c = () => interopDefault(import('..\\pages\\topratedmovies.vue' /* webpackChunkName: "pages/topratedmovies" */))
-const _6da03d39 = () => interopDefault(import('..\\pages\\movies\\_movieid.vue' /* webpackChunkName: "pages/movies/_movieid" */))
-const _563d1cd0 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _2904c89d = () => interopDefault(import('..\\pages\\favorites.vue' /* webpackChunkName: "pages/favorites" */))
+const _0e693baf = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */))
+const _7eb36022 = () => interopDefault(import('..\\pages\\popularmovies.vue' /* webpackChunkName: "pages/popularmovies" */))
+const _732cea66 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register" */))
+const _6a23bb08 = () => interopDefault(import('..\\pages\\topratedmovies.vue' /* webpackChunkName: "pages/topratedmovies" */))
+const _61f1b639 = () => interopDefault(import('..\\pages\\movies\\_movieid.vue' /* webpackChunkName: "pages/movies/_movieid" */))
+const _44c19898 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -21,20 +24,32 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/favorites",
+    component: _2904c89d,
+    name: "favorites"
+  }, {
+    path: "/login",
+    component: _0e693baf,
+    name: "login"
+  }, {
     path: "/popularmovies",
-    component: _fc2b8dbc,
+    component: _7eb36022,
     name: "popularmovies"
   }, {
+    path: "/register",
+    component: _732cea66,
+    name: "register"
+  }, {
     path: "/topratedmovies",
-    component: _2e92697c,
+    component: _6a23bb08,
     name: "topratedmovies"
   }, {
     path: "/movies/:movieid?",
-    component: _6da03d39,
+    component: _61f1b639,
     name: "movies-movieid"
   }, {
     path: "/",
-    component: _563d1cd0,
+    component: _44c19898,
     name: "index"
   }],
 

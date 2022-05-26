@@ -102,11 +102,13 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
 import axios from 'axios'
 import Navbar from '../components/Navbar.vue'
 
+
 export default {
-  name: 'home',
+  name: 'home-page',
 
   components: {
     Navbar,
@@ -120,7 +122,11 @@ export default {
       searchInput: '',
     }
   },
-
+  computed: {
+    ...mapState({
+      isAuth: state => state.isAuth
+    })
+  },
   async fetch() {
     if (this.searchInput === '') {
       await this.getMovies()

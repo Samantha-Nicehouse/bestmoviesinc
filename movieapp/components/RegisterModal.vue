@@ -8,28 +8,13 @@
         <div class="first-half">
           <h1>Create An Account</h1>
           <div class="login-form">
-            <div class="name">
-              <input
-                id="first-name"
-                ref="First Name"
-                type="text"
-                name="First Name"
-                placeholder="First Name"
-              />
-              <input
-                id="last-name"
-                ref="Last Name"
-                type="text"
-                name="Last Name"
-                placeholder="Last Name"
-              />
-            </div>
             <input
-              id="username"
-              ref="username"
-              type="text"
-              name="username"
-              placeholder="Username"
+              id="email"
+              ref="email"
+              type="email"
+              name="email"
+              placeholder="Email"
+              v-model = "email"
             />
             <input
               id="password"
@@ -37,27 +22,9 @@
               type="password"
               name="password"
               placeholder="Password"
+              v-model = "password"
             />
-            <input
-              id="email"
-              ref="email"
-              type="email"
-              name="email"
-              placeholder="Email"
-            />
-
-            <input id="birthday" class="birthday" type="date" name="birthday" />
-            <div class="country-dropdown">
-              <vue-select
-                id="country"
-                :options="items"
-                class="dropdown"
-                placeholder="Country"
-                :reduce="(country) => (selectedCountry = country)"
-              >
-              </vue-select>
-            </div>
-
+        
             <div class="buttons-container">
               <button class="button" @click="register">Register</button>
               <button class="button cancelButton" @click="close">Cancel</button>
@@ -75,232 +42,18 @@
 </template>
 
 <script>
-import vueSelect from 'vue-select'
 import 'vue-select/dist/vue-select.css'
 
 export default {
-  components: {
-    vueSelect,
-  },
+  
   data() {
     return {
-      user: {},
-      selectedCountry: '',
       showModal: false,
-      items: [
-        'Afghanistan',
-        'Albania',
-        'Algeria',
-        'Andorra',
-        'Angola',
-        'Anguilla',
-        'Antigua &amp; Barbuda',
-        'Argentina',
-        'Armenia',
-        'Aruba',
-        'Australia',
-        'Austria',
-        'Azerbaijan',
-        'Bahamas',
-        'Bahrain',
-        'Bangladesh',
-        'Barbados',
-        'Belarus',
-        'Belgium',
-        'Belize',
-        'Benin',
-        'Bermuda',
-        'Bhutan',
-        'Bolivia',
-        'Bosnia &amp; Herzegovina',
-        'Botswana',
-        'Brazil',
-        'British Virgin Islands',
-        'Brunei',
-        'Bulgaria',
-        'Burkina Faso',
-        'Burundi',
-        'Cambodia',
-        'Cameroon',
-        'Cape Verde',
-        'Cayman Islands',
-        'Chad',
-        'Chile',
-        'China',
-        'Colombia',
-        'Congo',
-        'Cook Islands',
-        'Costa Rica',
-        'Cote D Ivoire',
-        'Croatia',
-        'Cruise Ship',
-        'Cuba',
-        'Cyprus',
-        'Czech Republic',
-        'Denmark',
-        'Djibouti',
-        'Dominica',
-        'Dominican Republic',
-        'Ecuador',
-        'Egypt',
-        'El Salvador',
-        'Equatorial Guinea',
-        'Estonia',
-        'Ethiopia',
-        'Falkland Islands',
-        'Faroe Islands',
-        'Fiji',
-        'Finland',
-        'France',
-        'French Polynesia',
-        'French West Indies',
-        'Gabon',
-        'Gambia',
-        'Georgia',
-        'Germany',
-        'Ghana',
-        'Gibraltar',
-        'Greece',
-        'Greenland',
-        'Grenada',
-        'Guam',
-        'Guatemala',
-        'Guernsey',
-        'Guinea',
-        'Guinea Bissau',
-        'Guyana',
-        'Haiti',
-        'Honduras',
-        'Hong Kong',
-        'Hungary',
-        'Iceland',
-        'India',
-        'Indonesia',
-        'Iran',
-        'Iraq',
-        'Ireland',
-        'Isle of Man',
-        'Israel',
-        'Italy',
-        'Jamaica',
-        'Japan',
-        'Jersey',
-        'Jordan',
-        'Kazakhstan',
-        'Kenya',
-        'Kuwait',
-        'Kyrgyz Republic',
-        'Laos',
-        'Latvia',
-        'Lebanon',
-        'Lesotho',
-        'Liberia',
-        'Libya',
-        'Liechtenstein',
-        'Lithuania',
-        'Luxembourg',
-        'Macau',
-        'Macedonia',
-        'Madagascar',
-        'Malawi',
-        'Malaysia',
-        'Maldives',
-        'Mali',
-        'Malta',
-        'Mauritania',
-        'Mauritius',
-        'Mexico',
-        'Moldova',
-        'Monaco',
-        'Mongolia',
-        'Montenegro',
-        'Montserrat',
-        'Morocco',
-        'Mozambique',
-        'Namibia',
-        'Nepal',
-        'Netherlands',
-        'Netherlands Antilles',
-        'New Caledonia',
-        'New Zealand',
-        'Nicaragua',
-        'Niger',
-        'Nigeria',
-        'Norway',
-        'Oman',
-        'Pakistan',
-        'Palestine',
-        'Panama',
-        'Papua New Guinea',
-        'Paraguay',
-        'Peru',
-        'Philippines',
-        'Poland',
-        'Portugal',
-        'Puerto Rico',
-        'Qatar',
-        'Reunion',
-        'Romania',
-        'Russia',
-        'Rwanda',
-        'Saint Pierre &amp; Miquelon',
-        'Samoa',
-        'San Marino',
-        'Satellite',
-        'Saudi Arabia',
-        'Senegal',
-        'Serbia',
-        'Seychelles',
-        'Sierra Leone',
-        'Singapore',
-        'Slovakia',
-        'Slovenia',
-        'South Africa',
-        'South Korea',
-        'Spain',
-        'Sri Lanka',
-        'St Kitts &amp; Nevis',
-        'St Lucia',
-        'St Vincent',
-        'St. Lucia',
-        'Sudan',
-        'Suriname',
-        'Swaziland',
-        'Sweden',
-        'Switzerland',
-        'Syria',
-        'Taiwan',
-        'Tajikistan',
-        'Tanzania',
-        'Thailand',
-        "Timor L'Este",
-        'Togo',
-        'Tonga',
-        'Trinidad &amp; Tobago',
-        'Tunisia',
-        'Turkey',
-        'Turkmenistan',
-        'Turks &amp; Caicos',
-        'Uganda',
-        'Ukraine',
-        'United Arab Emirates',
-        'United Kingdom',
-        'Uruguay',
-        'Uzbekistan',
-        'Venezuela',
-        'Vietnam',
-        'Virgin Islands (US)',
-        'Yemen',
-        'Zambia',
-        'Zimbabwe',
-      ],
+     email : '',
+     password : '',
     }
   },
-  watch: {
-    selected_json(user) {
-      this.$store.commit('setSelectedJson', user)
-    },
-  },
+
   methods: {
     open() {
       this.showModal = true
@@ -315,29 +68,18 @@ export default {
       window.onscroll = function () {}
     },
     async register() {
-      const firstName = document.getElementById('first-name').value
-      const lastName = document.getElementById('last-name').value
-      const username = document.getElementById('username').value
-      const pass = document.getElementById('password').value
-      const email = document.getElementById('email').value
-      const birthday = document.getElementById('birthday').value
-      const country = this.selectedCountry
-      const user = {
-        name: firstName + ' ' + lastName,
-        username: username,
-        password: pass,
-        email: email,
-        birthday: birthday,
-        country: country,
-      }
       try {
-        const res = await this.$axios.post(
-          'https://viaucsep6group1.azurewebsites.net/Auth/Register',
-          user
-        )
-        alert(`${res.data} You can log in now!`)
+        await fetch('https://bmiwebapi3.azurewebsites.net/api/auth/register', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          email: this.email,
+          password: this.password
+          })
+        });
+        
       } catch (e) {
-        alert('Something went wrong, please try again later!')
+        console.log(e)
       }
       this.close()
     },

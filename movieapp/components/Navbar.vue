@@ -13,28 +13,14 @@
           ><img src="../assets/imgs/logo.png" alt="logo"
         /></nuxt-link>
       </div>
-      <div
-        v-if="checkForLoggedInUser() == `` || checkForLoggedInUser() == null"
-        class="links"
-      >
-        <nuxt-link class="navbar-item" to="/popularmovies"
-          >Popular Movies</nuxt-link
-        >
-        <nuxt-link class="navbar-item" to="/topratedmovies"
-          >Top Rated Movies</nuxt-link
-        >
-      </div>
-      <div v-else class="links">
-        <nuxt-link class="navbar-item" to="/popularmovies"
-          >Popular Movies</nuxt-link
-        >
-        <nuxt-link class="navbar-item" to="/topratedmovies"
-          >Top Rated Movies</nuxt-link
-        >
+      <div v-if="isAuth" class="links">
+        <nuxt-link class="navbar-item" to="/popularmovies">Popular Movies</nuxt-link>
+        <nuxt-link class="navbar-item" to="/topratedmovies">Top Rated Movies</nuxt-link>
+        <nuxt-link class="navbar-item" to="/favorites">Favorites</nuxt-link>
       </div>
 
       <div
-        v-if="checkForLoggedInUser() == `` || checkForLoggedInUser() == null"
+        v-if="!isAuth"
         class="button-container"
       >
         <div class="auth-btn" @click="openLogin()">
@@ -54,12 +40,19 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
 import LoginModal from '../components/LoginModal'
 import RegisterModal from '../components/RegisterModal'
 export default {
+  name: 'nav-bar',
   components: {
     LoginModal,
     RegisterModal,
+  },
+  computed: {
+    ...mapState({
+      isAuth: state => state.isAuth
+    })
   },
   props: {
     design: {
@@ -69,42 +62,15 @@ export default {
   },
   methods: {
     openLogin() {
-      this.$refs['login'].open()
+      const x = 'login'
+      this.$refs[x].open()
     },
     openRegister() {
-      this.$refs['register'].open()
-    },
-    checkForLoggedInUser() {
-      const userToken = this.getCookie('authToken')
-      return userToken
+      const y = 'register'
+      this.$refs[y].open()
     },
     logOut() {
-      const token = this.getCookie('authToken')
-      this.$axios.post('', token)
-      document.cookie = 'authToken= ; expires = Thu, 01 Jan 1970 00:00:00 GMT'
-      console.log(this.$route.name)
-      if (this.$route.name === 'index') {
-        window.location.reload()
-      } else {
-        this.$router.push('/')
-      }
-    },
-    getCookie(name) {
-      const dc = document.cookie
-      const prefix = name + '='
-      let begin = dc.indexOf('; ' + prefix)
-      let end
-      if (begin === -1) {
-        begin = dc.indexOf(prefix)
-        if (begin !== 0) return null
-      } else {
-        begin += 2
-        end = document.cookie.indexOf(';', begin)
-        if (end === -1) {
-          end = dc.length
-        }
-      }
-      return decodeURI(dc.substring(begin + prefix.length, end))
+  
     },
   },
 }

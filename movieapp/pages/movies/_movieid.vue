@@ -62,6 +62,9 @@
             }}<span v-if="index < actors.length - 1">,</span></span
           >.
         </p>
+        <div>
+          <button class="button"> Add Movie to Favorites </button>
+        </div>
       </div>
     </div>
   </div>
@@ -78,6 +81,12 @@ export default {
       movieCredits: '',
       directors: [],
       actors: [],
+      Id : '',
+      title : '',
+      rating : '',
+      poster_path: '',
+      vote_average : '',
+      release_date : '',
     }
   },
 
@@ -120,6 +129,26 @@ export default {
         }
       })
     },
+    async addMovieToFavorites() {
+        try{
+         await this.$axios( {
+        method: 'post',
+        url:"https://mbiapiv2.azurewebsites.net/api/movies/addMovie",
+        headers: {'Content-Type': 'application/json'},
+        data: JSON.stringify({
+          id: this.movie.id.toString(),
+          title: this.movie.title,
+          description: this.movie.overview,
+          poster_img : this.movie.poster_path.toString(),
+          release_date : this.movie.release_date.toString(),
+          vote_avg : this.movie.vote_average
+        })
+        });
+        }
+        catch(e){
+
+        }
+    }
   },
 }
 </script>
