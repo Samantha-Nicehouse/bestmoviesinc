@@ -6,6 +6,9 @@ export const state = () => ({
 export const mutations = {
     set_auth(store, data) {
         store.isAuth = data;
+    },
+    logout(store) {
+        store.isAuth = false
     }
 };
 export const actions = {
@@ -41,5 +44,8 @@ export const actions = {
             commit("set_auth",true);
             return false;
         }
+    },
+    async logout({ commit}){
+       await commit("set_auth",false)
     }
 };

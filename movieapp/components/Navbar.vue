@@ -69,8 +69,8 @@ export default {
       const y = 'register'
       this.$refs[y].open()
     },
-    logOut() {
-  
+    async logOut() {
+      await this.$store.dispatch("logout")
     },
   },
 }

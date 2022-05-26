@@ -1,11 +1,9 @@
 <template>
 <div class="app">
-  <Navbar class="navbar" design="default" />
   <div class="home">
-    <div>
-      <h1>Favorite Movies</h1>
-    </div>
+    
   <div class="container movies">
+    <h1 class="heading">Favorite Movies</h1>
   <div  id="movie-grid" class="movies-grid">
           <div v-for="(movie,index) in Mmovies" :key="index" class="movie" >
             <div class="movie-img">
@@ -79,6 +77,14 @@ export default{
 
 <style lang="scss">
 .home {
+  .heading{
+    padding-top: 55px;
+    padding-bottom: 15px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
   .loading {
     padding-top: 120px;
     align-items: flex-start;

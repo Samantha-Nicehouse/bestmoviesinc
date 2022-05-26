@@ -63,7 +63,7 @@
           >.
         </p>
         <div>
-          <button class="button"> Add Movie to Favorites </button>
+          <button class="button" @click="addMovieToFavorites" > Add Movie to Favorites </button>
         </div>
       </div>
     </div>
@@ -146,7 +146,7 @@ export default {
         });
         }
         catch(e){
-
+          console.log(e)
         }
     }
   },
