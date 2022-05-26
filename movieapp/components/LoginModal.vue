@@ -11,18 +11,18 @@
             <input
               id="email"
               ref="email"
+              v-model = "email"
               type="email"
               name="email"
               placeholder="Email"
-              v-model = "email"
             />
             <input
               id="password"
               ref="password"
+              v-model = "password"
               type="password"
               name="password"
               placeholder="Password"
-              v-model = "password"
             />
             <div class="buttons-container">
               <button id="login" class="button" @click="login">Log In</button>
@@ -68,7 +68,7 @@ export default {
         this.close()
       }
       catch(e){
-        console.log(e)
+        
       }
       
     },

@@ -62,7 +62,7 @@
             }}<span v-if="index < actors.length - 1">,</span></span
           >.
         </p>
-        <div>
+        <div v-if="isAuth">
           <button class="button" @click="addMovieToFavorites" > Add Movie to Favorites </button>
         </div>
       </div>
@@ -71,9 +71,10 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
 import axios from 'axios'
 export default {
-  name: 'singleMovie',
+  name: 'SingleMovie',
 
   data() {
     return {
@@ -101,7 +102,11 @@ export default {
       title: this.movie.title,
     }
   },
-
+computed: {
+    ...mapState({
+      isAuth: state => state.isAuth
+    })
+  },
   methods: {
     async getSingleMovie() {
       const data = axios.get(
@@ -145,9 +150,7 @@ export default {
         })
         });
         }
-        catch(e){
-          console.log(e)
-        }
+        catch(e){}
     }
   },
 }

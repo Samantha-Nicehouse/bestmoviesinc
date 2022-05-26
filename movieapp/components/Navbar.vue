@@ -44,21 +44,21 @@ import {mapState} from "vuex";
 import LoginModal from '../components/LoginModal'
 import RegisterModal from '../components/RegisterModal'
 export default {
-  name: 'nav-bar',
+  name: 'NavBar',
   components: {
     LoginModal,
     RegisterModal,
-  },
-  computed: {
-    ...mapState({
-      isAuth: state => state.isAuth
-    })
   },
   props: {
     design: {
       validator: (prop) => ['default', 'movielist'].includes(prop),
       default: 'default',
     },
+  },
+  computed: {
+    ...mapState({
+      isAuth: state => state.isAuth
+    })
   },
   methods: {
     openLogin() {

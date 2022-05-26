@@ -41,7 +41,7 @@
 import axios from 'axios'
 import cookies from "js-cookie"
 export default{
-  name: 'favorite-movies',
+  name: 'FavoriteMovies',
   data(){
     return{
       Mmovies: [],
@@ -61,15 +61,11 @@ export default{
           }
         })
         const result = await data
-        result.data.forEach((movie,index) =>{
-          this.Mmovies.push(movie)
-          console.log("movies",this.Mmovies)
+        result.data.forEach((movie) =>{
+          this.Mmovies.push(movie) 
         })
-        
       }
-      catch(e){
-        console.log(e)
-      }
+      catch(e){}
       }
     },
 }

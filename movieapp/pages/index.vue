@@ -108,7 +108,7 @@ import Navbar from '../components/Navbar.vue'
 
 
 export default {
-  name: 'home-page',
+  name: 'HomePage',
 
   components: {
     Navbar,
@@ -122,11 +122,7 @@ export default {
       searchInput: '',
     }
   },
-  computed: {
-    ...mapState({
-      isAuth: state => state.isAuth
-    })
-  },
+  
   async fetch() {
     if (this.searchInput === '') {
       await this.getMovies()
@@ -137,7 +133,7 @@ export default {
     }
   },
   fetchDelay: 1000,
-
+  
   head() {
     return {
       title: 'Movie App - Latest Streaming Movie Info',
@@ -155,13 +151,11 @@ export default {
       ],
     }
   },
-
-  watch: {
-    searchInput() {
-      console.log(this.searchInput)
-    },
+  computed: {
+    ...mapState({
+      isAuth: state => state.isAuth
+    })
   },
-
   methods: {
     async getMovies() {
       await axios

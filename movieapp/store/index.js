@@ -40,7 +40,7 @@ export const actions = {
             };
 
         } catch (error) {
-            console.error("error", error);
+            
             commit("set_auth",true);
             return false;
         }
