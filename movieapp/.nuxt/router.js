@@ -6,9 +6,10 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _2904c89d = () => interopDefault(import('..\\pages\\favorites.vue' /* webpackChunkName: "pages/favorites" */))
 const _0e693baf = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */))
-const _7eb36022 = () => interopDefault(import('..\\pages\\popularmovies.vue' /* webpackChunkName: "pages/popularmovies" */))
 const _732cea66 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register" */))
-const _6a23bb08 = () => interopDefault(import('..\\pages\\topratedmovies.vue' /* webpackChunkName: "pages/topratedmovies" */))
+const _3406ed9f = () => interopDefault(import('..\\pages\\statistics\\popularmovies.vue' /* webpackChunkName: "pages/statistics/popularmovies" */))
+const _66246844 = () => interopDefault(import('..\\pages\\statistics\\topgenremovies.vue' /* webpackChunkName: "pages/statistics/topgenremovies" */))
+const _7fe776c2 = () => interopDefault(import('..\\pages\\statistics\\topratedmovies.vue' /* webpackChunkName: "pages/statistics/topratedmovies" */))
 const _61f1b639 = () => interopDefault(import('..\\pages\\movies\\_movieid.vue' /* webpackChunkName: "pages/movies/_movieid" */))
 const _44c19898 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -32,17 +33,21 @@ export const routerOptions = {
     component: _0e693baf,
     name: "login"
   }, {
-    path: "/popularmovies",
-    component: _7eb36022,
-    name: "popularmovies"
-  }, {
     path: "/register",
     component: _732cea66,
     name: "register"
   }, {
-    path: "/topratedmovies",
-    component: _6a23bb08,
-    name: "topratedmovies"
+    path: "/statistics/popularmovies",
+    component: _3406ed9f,
+    name: "statistics-popularmovies"
+  }, {
+    path: "/statistics/topgenremovies",
+    component: _66246844,
+    name: "statistics-topgenremovies"
+  }, {
+    path: "/statistics/topratedmovies",
+    component: _7fe776c2,
+    name: "statistics-topratedmovies"
   }, {
     path: "/movies/:movieid?",
     component: _61f1b639,

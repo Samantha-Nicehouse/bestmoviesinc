@@ -14,8 +14,10 @@
         /></nuxt-link>
       </div>
       <div v-if="isAuth" class="links">
-        <nuxt-link class="navbar-item" to="/popularmovies">Popular Movies</nuxt-link>
-        <nuxt-link class="navbar-item" to="/topratedmovies">Top Rated Movies</nuxt-link>
+        <nuxt-link class="navbar-item" to="/statistics/popularmovies">Popular Movies</nuxt-link>
+        <nuxt-link class="navbar-item" to="/statistics/topratedmovies">Top Rated Movies</nuxt-link>
+        <nuxt-link class="navbar-item" to="/statistics/topgenremovies">Top Genre Movies</nuxt-link>
+        <nuxt-link class="navbar-item" to="/statistics/topactormovies">Top Actor Movies</nuxt-link>
         <nuxt-link class="navbar-item" to="/favorites">Favorites</nuxt-link>
       </div>
 

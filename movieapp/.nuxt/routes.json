@@ -3,42 +3,56 @@
     "name": "favorites",
     "path": "/favorites",
     "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\favorites.vue",
-    "chunkName": "pages/favorites"
+    "chunkName": "pages/favorites",
+    "_name": "_2904c89d"
   },
   {
     "name": "login",
     "path": "/login",
     "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\login.vue",
-    "chunkName": "pages/login"
-  },
-  {
-    "name": "popularmovies",
-    "path": "/popularmovies",
-    "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\popularmovies.vue",
-    "chunkName": "pages/popularmovies"
+    "chunkName": "pages/login",
+    "_name": "_0e693baf"
   },
   {
     "name": "register",
     "path": "/register",
     "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\register.vue",
-    "chunkName": "pages/register"
+    "chunkName": "pages/register",
+    "_name": "_732cea66"
   },
   {
-    "name": "topratedmovies",
-    "path": "/topratedmovies",
-    "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\topratedmovies.vue",
-    "chunkName": "pages/topratedmovies"
+    "name": "statistics-popularmovies",
+    "path": "/statistics/popularmovies",
+    "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\statistics\\\\popularmovies.vue",
+    "chunkName": "pages/statistics/popularmovies",
+    "_name": "_3406ed9f"
+  },
+  {
+    "name": "statistics-topgenremovies",
+    "path": "/statistics/topgenremovies",
+    "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\statistics\\\\topgenremovies.vue",
+    "chunkName": "pages/statistics/topgenremovies",
+    "_name": "_66246844"
+  },
+  {
+    "name": "statistics-topratedmovies",
+    "path": "/statistics/topratedmovies",
+    "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\statistics\\\\topratedmovies.vue",
+    "chunkName": "pages/statistics/topratedmovies",
+    "_name": "_7fe776c2"
   },
   {
     "name": "movies-movieid",
     "path": "/movies/:movieid?",
     "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\movies\\\\_movieid.vue",
-    "chunkName": "pages/movies/_movieid"
+    "chunkName": "pages/movies/_movieid",
+    "_name": "_61f1b639"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\javic\\\\OneDrive\\\\Documents\\\\bestmoviesinc\\\\movieapp\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_44c19898"
   }
 ]

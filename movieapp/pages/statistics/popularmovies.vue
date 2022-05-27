@@ -48,10 +48,10 @@
 
 <script>
 import axios from 'axios'
-import Navbar from '../components/Navbar.vue'
+import Navbar from '../../components/Navbar.vue'
 
 export default {
-  name: 'popularmovies',
+  name: 'PopularMovies',
 
   components: {
     Navbar,

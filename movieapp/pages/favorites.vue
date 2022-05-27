@@ -1,5 +1,5 @@
-<template>
-<div class="app">
+<template >
+<div class="app" v-if="!isAuth">
   <div class="home">
     
   <div class="container movies">
@@ -33,11 +33,14 @@
 </div>
 
 </div>
-
+  <div v-else>
+      <p>hello</p>  
+  </div>
   
 </template>
 
 <script>
+import {mapState} from "vuex";
 import axios from 'axios'
 import cookies from "js-cookie"
 export default{
@@ -52,6 +55,11 @@ export default{
         
   },
    fetchDelay: 1000,
+  computed: {
+    ...mapState({
+      isAuth: state => state.isAuth
+    })
+  },
   methods: {
       async getMovies(){
         try{

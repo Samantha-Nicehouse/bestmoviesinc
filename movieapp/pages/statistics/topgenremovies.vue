@@ -1,20 +1,49 @@
 <template>
   <div class="toprated">
     <Navbar class="navbar" design="default" />
-
+    <div class="container search">
+        <h1>Select a genre</h1>
+        <select id="genre" v-model="genre" name="genre" @mouseenter="$fetch" class="form-control" @change="onChange($event) && $fetch">
+            <option value="27">Horror</option>
+            <option value="28">Action</option>
+            <option value="12">Adventure</option>
+            <option value="16">Animation</option>
+            <option value="35">Comedy</option>
+            <option value="80">Crime</option>
+            <option value="99">Documentary</option>
+            <option value="10751">Family</option>
+            <option value="14">Fantasy</option>
+            <option value="36">History</option>
+            <option value="10402">Music</option>
+            <option value="9648">Mystery</option>
+            <option value="10749">Romance</option>
+            <option value="878">Science Fiction</option>
+            <option value="10770">TV Movie</option>
+            <option value="53">Thriller</option>
+            <option value="10752">War</option>
+            <option value="37">Western</option>
+            <option value="18">Drama</option>
+        </select>
+        <button v-show="genre !== ''" class="button" @click="clearSearch">
+        Clear genre
+      </button>
+      
+    </div>
     <!-- Loading Animation -->
     <Loading v-if="$fetchState.pending" />
-
+    
     <!-- Movies -->
     <div v-else class="container movies">
       <!-- Popular Movies  -->
       <div id="movie-grid" class="movies-grid">
         <div v-for="(movie, index) in movies" :key="index" class="movie">
           <div class="movie-img">
+              <div v-if="movie.poster_path !== null ">
             <img
               :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`"
               alt=""
             />
+              </div>
             <p class="review">{{ movie.vote_average }}</p>
             <p class="overview">{{ movie.overview }}</p>
           </div>
@@ -48,10 +77,10 @@
 
 <script>
 import axios from 'axios'
-import Navbar from '../components/Navbar.vue'
+import Navbar from '../../components/Navbar.vue'
 
 export default {
-  name: 'topratedmovies',
+  name: 'TopGenreMovies',
 
   components: {
     Navbar,
@@ -61,13 +90,15 @@ export default {
   data() {
     return {
       movies: [],
+      genre: "",
     }
   },
 
   async fetch() {
-    await this.getMovies()
+      if(this.genre !== ""){
+        await this.getMovies()
+  }
   },
-  fetchDelay: 1000,
 
   head() {
     return {
@@ -89,9 +120,10 @@ export default {
 
   methods: {
     async getMovies() {
+
       await axios
         .get(
-          'https://api.themoviedb.org/3/movie/top_rated?api_key=a3350cca7f4b916251b737d31cd4135b&language=en-US&page=1'
+          `https://api.themoviedb.org/3/discover/movie?api_key=c0d2b5193ae0ea4f12cccda56ceab5c1&with_genres=${this.genre}&sort_by=vote_average.desc&vote_count.gte=10`
         )
         .then((res) => {
           res.data.results.forEach((movie) => {
@@ -99,13 +131,54 @@ export default {
           })
         })
     },
+     async onChange(event){
+         this.genre = await event.target.value
+         console.log(this.genre)
+     },
+     async getMoviesDrama() {
+      await axios
+        .get(
+          `https://api.themoviedb.org/3/discover/movie?api_key=c0d2b5193ae0ea4f12cccda56ceab5c1&with_genres=18&sort_by=vote_average.desc&vote_count.gte=10`
+        )
+        .then((res) => {
+          res.data.results.forEach((movie) => {
+            this.movies.push(movie)
+          })
+        })
+    },
+    clearSearch() {
+      this.genre = ''
+      this.movies = []
+    },
   },
 }
 </script>
 
 <style lang="scss">
+select{
+    margin: 5px;
+    width: 150px;
+    
+    font-size: 16px;
+    border: 1px solid #CCC;
+    height: 34px;
+}
+h1 {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 100;
+      margin-bottom: 8px;
+      @media (min-width: 750px) {
+        font-size: 32px;
+      }
+      span {
+        font-weight: 500;
+      }
+    }
 .toprated {
   background-color: #211f1f;
+  width: 100%;
+  height: 100%;
   .loading {
     padding-top: 120px;
     align-items: flex-start;

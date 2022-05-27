@@ -5,7 +5,10 @@
 </template>
 
 <script>
-export default {}
+
+export default {
+  name:"LoadingScreen"
+}
 </script>
 
 <style lang="scss" scoped>
@@ -15,6 +18,7 @@ export default {}
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #211f1f;
   @keyframes circle-loading {
     to {
       transform: rotateZ(360deg);
