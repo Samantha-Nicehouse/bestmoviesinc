@@ -69,7 +69,7 @@ export default {
     },
     async register() {
       try {
-        await fetch('https://bmiwebapi3.azurewebsites.net/api/auth/register', {
+        await fetch('https://bmiauthorizationapi.azurewebsites.net/api/auth/register', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({

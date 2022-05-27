@@ -63,7 +63,7 @@ export default{
   methods: {
       async getMovies(){
         try{
-        const data = await axios.get('https://mbiapiv2.azurewebsites.net/api/movies/getMovie', {
+        const data = await axios.get('http://bmimovieapi.azurewebsites.net/api/movies/getMovie', {
           headers:{
             Authorization: `Bearer ${cookies.get("x-access-token")}`
           }
