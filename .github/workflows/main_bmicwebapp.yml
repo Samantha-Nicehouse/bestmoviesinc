@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'BMICwebapp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_29055DF3D65549FEAB7FB82DCF7FABB6 }}
+          publish-profile: ${{ secrets.Publish_Profile }}
           package: .
