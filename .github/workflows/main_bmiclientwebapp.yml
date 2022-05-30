@@ -50,7 +50,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'BMIClientWebApp'
+          app-name: 'JavisClientWebApp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4B1C460270B34F859C515907FC19E574 }}
+          publish-profile: ${{ secrets.PUBLISH_PROFILE }}
           package: .
