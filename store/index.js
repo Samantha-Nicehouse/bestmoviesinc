@@ -41,7 +41,7 @@ export const actions = {
 
         } catch (error) {
             
-            commit("set_auth",true);
+            commit("set_auth",false);
             return false;
         }
     },
