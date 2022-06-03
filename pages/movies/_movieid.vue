@@ -138,7 +138,7 @@ computed: {
         try{
          await this.$axios( {
         method: 'post',
-        url:"http://bmimovieapi.azurewebsites.net/api/movies/addMovie",
+        url:"https://bmimovieapi.azurewebsites.net/api/movies/addMovie",
         headers: {'Content-Type': 'application/json'},
         data: JSON.stringify({
           id: this.movie.id.toString(),
