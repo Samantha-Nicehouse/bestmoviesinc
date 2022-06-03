@@ -1,5 +1,5 @@
 <template >
-<div class="app" v-if="!isAuth">
+<div class="app" v-if="isAuth">
   <div class="home">
     
   <div class="container movies">
